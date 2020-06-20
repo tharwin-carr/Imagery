@@ -8,24 +8,32 @@
 </head>
 <body>
     <div class='container'>
-        <form id='js-form'>
-            <input type='text' id='js-search-term' placeholder='Search For a Picture'>
-            <input type='submit' value='Go!'>
-            <p>Suggested: love, basketball, beach, nature, etc.</p>
-        </form>
-        <p id='js-error-message' class='error-message'></p>
+        <header>
+            <h1>Pictures Gallore</h1>
+            <form id='js-form'>
+                <input type='text' id='js-search-term' placeholder='Search For a Picture'>
+                <input type='submit' value='Search!'>
+                <p>Suggested: love, basketball, beach, nature, etc.</p>
+            </form>
+        </header>
 
-        <section id='js-results' class='hidden'>
+        <main>
+            <p id='js-error-message'></p>
 
-        </section>
+            <div>
+                <ul id='js-results'>
 
+                </ul>
+            </div>
+
+            <div class='more-button'>
+                <button type='submit' id='js-show-more-button'>Show More</button>
+            </div>
+        </main>
 
         <footer>
-        <a href="https://www.pexels.com">Photos provided by Pexels</a>
+        <a href="https://www.pexels.com" target='_blank'>Photos provided by Pexels</a>
         </footer>
-
-
-
     </div>
     
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
