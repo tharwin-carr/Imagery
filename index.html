@@ -5,29 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Picture Generator</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/35ac70763c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class='container'>
         <header>
             <h1>Pictures Gallore</h1>
             <form id='js-form'>
-                <input type='text' id='js-search-term' placeholder='Search For a Picture'>
-                <input type='submit' value='Search!'>
-                <p>Suggested: love, basketball, beach, nature, etc.</p>
+                <input class='search-bar' type='text' id='js-search-term' placeholder='Search For a Picture'>
+                <button class='submit-button' type='submit'><i class="fa fa-search"></i></button>
+                <p class='suggested'>Suggested: love, basketball, beach, etc.</p>
             </form>
         </header>
 
         <main>
             <p id='js-error-message'></p>
+            
 
             <div>
-                <ul id='js-results'>
+                <ul id='js-results' class='pictures'>
 
                 </ul>
             </div>
 
             <div class='more-button'>
-                <button type='submit' id='js-show-more-button'>Show More</button>
+                <button class='show-more'type='submit' id='js-show-more-button'>Show More</button>
             </div>
         </main>
 
