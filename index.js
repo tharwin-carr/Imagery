@@ -69,7 +69,7 @@ function formatQueryParams(params) {
 
       for(let i=0; i < responseJson.photos.length; i++){
           $('#js-results').append(`<li><img class='image-result' src='${responseJson.photos[i].src.medium}' alt='image_results'> <br> <div class='img-info'>
-          <p class= 'photographer'>${responseJson.photos[i].photographer}</p> <a class='photographer-url' href='${responseJson.photos[i].photographer_url}' target='_blank'>Photographer Page</a></div>
+          <p class= 'photographer'>${responseJson.photos[i].photographer}</p> <a class='photographer-url' href='${responseJson.photos[i].url}' target='_blank'>Download Photo</a></div>
            </li>`
           )};
       }
