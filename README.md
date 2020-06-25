@@ -16,4 +16,17 @@ Features:
 
 API:
 
-<a href='https://www.pexels.com/api/' target='_blank'>Pexel API</a>
+<a href='https://www.pexels.com/api/'>Pexel API</a>
+
+Languages Used:
+
+* HTML
+* CSS
+* JavaScript
+* jQuery
+
+Demo:
+
+<a href='https://tharwin-carr.github.io/picture-generator/'> Live Demo</a>
+
+
