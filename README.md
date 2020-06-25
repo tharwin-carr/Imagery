@@ -1,4 +1,4 @@
-Imagery
+<h1> Imagery </h1>
 
 Screenshots:
 ![screenshot for app](images/screenshot1.png)
