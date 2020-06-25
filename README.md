@@ -10,3 +10,10 @@ I wanted to create an app where a user could find curated photos from photograph
 Features:
 
 * View currated photos from photographers that are updated regularly
+* Seach for images by topic
+* View the photographer page for any given photo
+* Download image
+
+API:
+
+[pexel api] (https://www.pexels.com/api/)
