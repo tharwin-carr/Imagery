@@ -16,4 +16,4 @@ Features:
 
 API:
 
-`<a href='https://www.pexels.com/api/'>Pexel API</a>`
+<a href='https://www.pexels.com/api/'>Pexel API</a>
