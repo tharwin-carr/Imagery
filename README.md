@@ -27,6 +27,6 @@ Languages Used:
 
 Demo:
 
-<a href='https://tharwin-carr.github.io/picture-generator/'> Live Demo</a>
+<a href='https://tharwin-carr.github.io/Imagery/'> Live Demo</a>
 
 
