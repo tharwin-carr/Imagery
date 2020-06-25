@@ -8,4 +8,5 @@ Motivation:
 I wanted to create an app where a user could find curated photos from photographers and follow the photographer's page or download their photos.
 
 Features:
-*feladlf
+
+* View currated photos from photographers that are updated regularly
