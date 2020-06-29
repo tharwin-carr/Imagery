@@ -1,7 +1,7 @@
 'use strict'
 
 const apiKey = '563492ad6f917000010000013b2715be52cb41c483e502e33f504956';
-const curatedUrl = `https://api.pexels.com/v1/curated`;
+const curatedUrl = 'https://api.pexels.com/v1/curated?per_page=10&page=1';
 const searchUrl = 'https://api.pexels.com/v1/search';
 let page = 1;
 
@@ -19,7 +19,7 @@ function formatQueryParams(params) {
           page: +page,
           per_page: 10,
       }
-
+    
       const queryStrings = formatQueryParams(params);
       const firstUrl = curatedUrl + '?' + queryStrings;
       const secondUrl = searchUrl + '?' + queryStrings;
@@ -47,19 +47,26 @@ function formatQueryParams(params) {
     }
 
     fetch(url, options)
-    .then(response => {
-        if(response.ok) {
-            return response.json();
+    .then(response => response.json())
+    .then(responseJson => {
+        if(responseJson.total_results === 0) {
+            noResults();
+        } else {
+            displayResults(responseJson, showMore);
         }
-
-        throw new Error(response.statusText);
     })
-    
-    .then(responseJson => displayResults(responseJson, showMore))
-    .catch(err => {
-        $('#js-error-message').text(`Something went wrong. ${err.message}`);
-    });
+    .catch(function (error){
+        console.log(error);
+        alert('Something went wrong! Try again Later')
+    })
+}
+
+  //function for when no images are found
+  function noResults() {
+      $('#js-results').empty();
+      $('#js-error-message').show();
   }
+
 
   //displays the search results to the DOM for the user
   function displayResults(responseJson, showMore = false) {
@@ -68,18 +75,30 @@ function formatQueryParams(params) {
       }
 
       for(let i=0; i < responseJson.photos.length; i++){
-          $('#js-results').append(`<li><img class='image-result' src='${responseJson.photos[i].src.medium}' alt='image_results'> <br> <div class='img-info'>
-          <p class= 'photographer'>${responseJson.photos[i].photographer}</p> <a class='photographer-url' href='${responseJson.photos[i].url}' target='_blank'>Download Photo</a></div>
-           </li>`
-          )};
+          $('#js-results').append(pictureTemplate(responseJson.photos[i].src.medium, responseJson.photos[i].photographer, responseJson.photos[i].url)
+          )
+        $('#js-error-message').hide();
+    };
       }
 
-      //shows more photos on the DOM when the 'show more' button is clicked
+      //HTML Template Generator for displayResults()
+      function pictureTemplate(src, photographer, url) {
+          return `
+          <li><img class='image-result' src='${src}' alt='image_results'> <br> <div class='img-info'>
+          <p class='photographer'>${photographer}</p> <a class='photographer-url' href='${url}' target_blank'>Download Photo</a></div>`
+      }
+
+      //scroll function to load more data as the user scrolls
       function showMore() {
-          $('#js-show-more-button').click(event => {
-              let search = $('#js-search-term').val();
-              findPics(search, ++page, true);
-          });
+        $(window).on("scroll", function() {
+            let scrollHeight = $(document).height();
+            let scrollPosition = $(window).height() + $(window).scrollTop();
+            if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+                // when scroll to bottom of the page
+                let search = $('#js-search-term').val();
+                    findPics(search, ++page, true);
+            }
+        });
       }
 
       function watchForm() {

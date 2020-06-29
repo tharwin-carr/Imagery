@@ -5,7 +5,7 @@
     background-color: #F7EBD4;
 }
 
-.error-message {
+.hidden {
     display: none;
 }
 
@@ -58,6 +58,12 @@ h1 {
     color: #091034;
     font-size: 12px;
     margin-bottom: 30px;
+}
+
+#js-error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
 }
 
 .pictures {
@@ -136,6 +142,10 @@ footer {
     .image-result {
         width: 350px;
         height: 350px;
+    }
+
+    #js-error-message {
+        font-size: 1.2em;
     }
 }
 

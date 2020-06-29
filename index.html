@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Picture Generator</title>
+    <title>Imagery</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/35ac70763c.js" crossorigin="anonymous"></script>
@@ -13,7 +13,7 @@
     <div class='container'>
         <header>
             <h1>
-                <a href='index.html'>Wallpapers Gallore</a>
+                <a href='index.html'>Imagery</a>
             </h1>
             <form id='js-form'>
                 <input class='search-bar' type='text' id='js-search-term' placeholder='Search For a Wallpaper'>
@@ -23,17 +23,13 @@
         </header>
 
         <main>
-            <p id='js-error-message'></p>
+            <p id='js-error-message' class='hidden'>No pictures available! Try another search! <a href='index.html' class='home'>Home</a></p>
             
 
             <div>
                 <ul id='js-results' class='pictures'>
 
                 </ul>
-            </div>
-
-            <div class='more-button'>
-                <button class='show-more' type='submit' id='js-show-more-button'>Show More</button>
             </div>
         </main>
 
